@@ -1,0 +1,170 @@
+\hypertarget{bestfit_8cpp}{}\section{bestfit.\+cpp File Reference}
+\label{bestfit_8cpp}\index{bestfit.\+cpp@{bestfit.\+cpp}}
+
+
+Basic functionality.  This file has all the classes and functions needed to find the bestfit line. It is called by the Python script everytime the slider is changed.  
+
+
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for bestfit.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{bestfit_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpoint}{point}
+\begin{DoxyCompactList}\small\item\em A class for point  The coordinates and a constructor. \end{DoxyCompactList}\item 
+class \hyperlink{classerrorxy}{errorxy}
+\begin{DoxyCompactList}\small\item\em A class for error  The slope,intercept and error values. \end{DoxyCompactList}\item 
+class \hyperlink{classDataset}{Dataset}
+\begin{DoxyCompactList}\small\item\em A class for the dataset  A constructor to initialize with number of points and an array to store points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{bestfit_8cpp_a27428b63bcf403c94d1f4500552b9ddd}{err} (\hyperlink{classDataset}{Dataset} $\ast$temp)
+\item 
+void \hyperlink{bestfit_8cpp_a9be2a8d43d108e4fdc81aab7b731ec0c}{read\+File} (\hyperlink{classDataset}{Dataset} $\ast$D)
+\item 
+int \hyperlink{bestfit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{bestfit_8cpp_abaef4f818f7fb7047b746a6cdd2bfdda}{num\+\_\+points}
+\begin{DoxyCompactList}\small\item\em A G\+L\+O\+B\+AL V\+A\+R\+I\+A\+B\+LE H\+O\+L\+D\+I\+NG T\+HE N\+U\+M\+B\+ER OF P\+O\+I\+N\+TS. \end{DoxyCompactList}\item 
+int \hyperlink{bestfit_8cpp_a3d4657665bf2dafc64e4960fd22279c8}{D\+\_\+size}
+\begin{DoxyCompactList}\small\item\em A G\+L\+O\+B\+AL V\+A\+R\+I\+A\+B\+LE TO S\+T\+O\+RE T\+HE S\+I\+ZE OF D\+A\+T\+A\+S\+ET. \end{DoxyCompactList}\item 
+float \hyperlink{bestfit_8cpp_ae78103ab33f03590e84ff7bc735629d7}{c}
+\begin{DoxyCompactList}\small\item\em A G\+L\+O\+B\+AL V\+A\+R\+I\+A\+B\+LE F\+OR V\+A\+L\+UE OF P\+E\+N\+A\+L\+TY C. \end{DoxyCompactList}\item 
+float $\ast$ \hyperlink{bestfit_8cpp_a4eb4b863ad1d4745ea0bfbeebfa26326}{OP}
+\begin{DoxyCompactList}\small\item\em A G\+L\+O\+B\+AL P\+O\+I\+N\+T\+ER TO S\+T\+O\+RE T\+HE 1-\/D A\+R\+R\+AY F\+OR DP. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{bestfit_8cpp_a7a923560494f659a6ebc84bb50f47e50}{minarr}
+\begin{DoxyCompactList}\small\item\em A P\+O\+I\+N\+T\+ER TO S\+T\+O\+RE T\+HE A\+R\+R\+AY F\+OR T\+HE P\+A\+TH R\+E\+C\+O\+N\+S\+T\+R\+U\+C\+T\+I\+ON. \end{DoxyCompactList}\item 
+\hyperlink{classerrorxy}{errorxy} $\ast$$\ast$ \hyperlink{bestfit_8cpp_a85ac310846072bf4d0bede011558acf1}{perr}
+\begin{DoxyCompactList}\small\item\em A G\+L\+O\+B\+AL P\+O\+I\+N\+T\+ER TO P\+O\+I\+N\+T\+E\+RS TO F\+O\+RM T\+HE 2-\/D A\+R\+R\+AY. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic functionality.  This file has all the classes and functions needed to find the bestfit line. It is called by the Python script everytime the slider is changed. 
+
+\begin{DoxyAuthor}{Author}
+Ansuman 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{bestfit_8cpp_a27428b63bcf403c94d1f4500552b9ddd}\label{bestfit_8cpp_a27428b63bcf403c94d1f4500552b9ddd}} 
+\index{bestfit.\+cpp@{bestfit.\+cpp}!err@{err}}
+\index{err@{err}!bestfit.\+cpp@{bestfit.\+cpp}}
+\subsubsection{\texorpdfstring{err()}{err()}}
+{\footnotesize\ttfamily void err (\begin{DoxyParamCaption}\item[{\hyperlink{classDataset}{Dataset} $\ast$}]{temp }\end{DoxyParamCaption})}
+
+Utility function for finding out the error of best fit line between any two points , Output = A 2d matrix with error valuesHere is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{bestfit_8cpp_a27428b63bcf403c94d1f4500552b9ddd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{bestfit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{bestfit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{bestfit.\+cpp@{bestfit.\+cpp}!main@{main}}
+\index{main@{main}!bestfit.\+cpp@{bestfit.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{bestfit_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{bestfit_8cpp_a9be2a8d43d108e4fdc81aab7b731ec0c}\label{bestfit_8cpp_a9be2a8d43d108e4fdc81aab7b731ec0c}} 
+\index{bestfit.\+cpp@{bestfit.\+cpp}!read\+File@{read\+File}}
+\index{read\+File@{read\+File}!bestfit.\+cpp@{bestfit.\+cpp}}
+\subsubsection{\texorpdfstring{read\+File()}{readFile()}}
+{\footnotesize\ttfamily void read\+File (\begin{DoxyParamCaption}\item[{\hyperlink{classDataset}{Dataset} $\ast$}]{D }\end{DoxyParamCaption})}
+
+Utility function to read the file and add points to the \hyperlink{classDataset}{Dataset}Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{bestfit_8cpp_a9be2a8d43d108e4fdc81aab7b731ec0c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{bestfit_8cpp_a9be2a8d43d108e4fdc81aab7b731ec0c_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{bestfit_8cpp_ae78103ab33f03590e84ff7bc735629d7}\label{bestfit_8cpp_ae78103ab33f03590e84ff7bc735629d7}} 
+\index{bestfit.\+cpp@{bestfit.\+cpp}!c@{c}}
+\index{c@{c}!bestfit.\+cpp@{bestfit.\+cpp}}
+\subsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily float c}
+
+
+
+A G\+L\+O\+B\+AL V\+A\+R\+I\+A\+B\+LE F\+OR V\+A\+L\+UE OF P\+E\+N\+A\+L\+TY C. 
+
+\mbox{\Hypertarget{bestfit_8cpp_a3d4657665bf2dafc64e4960fd22279c8}\label{bestfit_8cpp_a3d4657665bf2dafc64e4960fd22279c8}} 
+\index{bestfit.\+cpp@{bestfit.\+cpp}!D\+\_\+size@{D\+\_\+size}}
+\index{D\+\_\+size@{D\+\_\+size}!bestfit.\+cpp@{bestfit.\+cpp}}
+\subsubsection{\texorpdfstring{D\+\_\+size}{D\_size}}
+{\footnotesize\ttfamily int D\+\_\+size}
+
+
+
+A G\+L\+O\+B\+AL V\+A\+R\+I\+A\+B\+LE TO S\+T\+O\+RE T\+HE S\+I\+ZE OF D\+A\+T\+A\+S\+ET. 
+
+\mbox{\Hypertarget{bestfit_8cpp_a7a923560494f659a6ebc84bb50f47e50}\label{bestfit_8cpp_a7a923560494f659a6ebc84bb50f47e50}} 
+\index{bestfit.\+cpp@{bestfit.\+cpp}!minarr@{minarr}}
+\index{minarr@{minarr}!bestfit.\+cpp@{bestfit.\+cpp}}
+\subsubsection{\texorpdfstring{minarr}{minarr}}
+{\footnotesize\ttfamily int$\ast$ minarr}
+
+
+
+A P\+O\+I\+N\+T\+ER TO S\+T\+O\+RE T\+HE A\+R\+R\+AY F\+OR T\+HE P\+A\+TH R\+E\+C\+O\+N\+S\+T\+R\+U\+C\+T\+I\+ON. 
+
+\mbox{\Hypertarget{bestfit_8cpp_abaef4f818f7fb7047b746a6cdd2bfdda}\label{bestfit_8cpp_abaef4f818f7fb7047b746a6cdd2bfdda}} 
+\index{bestfit.\+cpp@{bestfit.\+cpp}!num\+\_\+points@{num\+\_\+points}}
+\index{num\+\_\+points@{num\+\_\+points}!bestfit.\+cpp@{bestfit.\+cpp}}
+\subsubsection{\texorpdfstring{num\+\_\+points}{num\_points}}
+{\footnotesize\ttfamily int num\+\_\+points}
+
+
+
+A G\+L\+O\+B\+AL V\+A\+R\+I\+A\+B\+LE H\+O\+L\+D\+I\+NG T\+HE N\+U\+M\+B\+ER OF P\+O\+I\+N\+TS. 
+
+\mbox{\Hypertarget{bestfit_8cpp_a4eb4b863ad1d4745ea0bfbeebfa26326}\label{bestfit_8cpp_a4eb4b863ad1d4745ea0bfbeebfa26326}} 
+\index{bestfit.\+cpp@{bestfit.\+cpp}!OP@{OP}}
+\index{OP@{OP}!bestfit.\+cpp@{bestfit.\+cpp}}
+\subsubsection{\texorpdfstring{OP}{OP}}
+{\footnotesize\ttfamily float$\ast$ OP}
+
+
+
+A G\+L\+O\+B\+AL P\+O\+I\+N\+T\+ER TO S\+T\+O\+RE T\+HE 1-\/D A\+R\+R\+AY F\+OR DP. 
+
+\mbox{\Hypertarget{bestfit_8cpp_a85ac310846072bf4d0bede011558acf1}\label{bestfit_8cpp_a85ac310846072bf4d0bede011558acf1}} 
+\index{bestfit.\+cpp@{bestfit.\+cpp}!perr@{perr}}
+\index{perr@{perr}!bestfit.\+cpp@{bestfit.\+cpp}}
+\subsubsection{\texorpdfstring{perr}{perr}}
+{\footnotesize\ttfamily \hyperlink{classerrorxy}{errorxy}$\ast$$\ast$ perr}
+
+
+
+A G\+L\+O\+B\+AL P\+O\+I\+N\+T\+ER TO P\+O\+I\+N\+T\+E\+RS TO F\+O\+RM T\+HE 2-\/D A\+R\+R\+AY. 
+
